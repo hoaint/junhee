@@ -38,3 +38,10 @@ genesis_register_sidebar(array(
     'name' => 'Body Section',
     'description' => 'This is a body section'
 ));
+
+genesis_register_sidebar(array(
+    'id' => 'news-section',
+    'name' => 'News Section',
+    'description' => 'This is a news section'
+));
+

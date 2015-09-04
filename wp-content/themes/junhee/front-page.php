@@ -32,6 +32,12 @@ function home_loop_helper()
         echo '</div>';
     }
 
+    if (is_active_sidebar('news-section')) {
+        echo '<div class="news-section">';
+        dynamic_sidebar('news-section');
+        echo '</div>';
+    }
+
     if (is_active_sidebar('body-section')) {
         echo '<div class="body-section">';
         dynamic_sidebar('body-section');

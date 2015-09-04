@@ -987,7 +987,7 @@ img.alignright,
 }
 
 /* Service style */
-.service-section {
+.service-section, .news-section {
     float: left;
     padding: 0 90px;
 }
@@ -1018,7 +1018,7 @@ img.alignright,
     overflow: hidden;
 }
 
-.service-section .widget-title {
+.home .widget-title {
     background: rgba(0, 0, 0, 0) url("images/title_line.png") no-repeat scroll left bottom;
     color: #333;
     font-size: 18px;
@@ -1034,6 +1034,14 @@ img.alignright,
 
 .attachment-service {
     transition: all 0.5s ease-in-out 0s;
+}
+
+.news-section .widget {
+    float: left;
+}
+
+.news-section .widget h4 {
+    margin-left: 0;
 }
 
 /* # Plugins
@@ -4556,7 +4564,7 @@ li.comment {
     background-color: #fff;
     font-size: 16px;
     line-height: 1;
-    padding: 40px 0;
+    padding: 0 0;
     text-align: center;
 }
 
