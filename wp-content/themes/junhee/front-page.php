@@ -7,7 +7,7 @@
  */
 
 /** Force full width layout */
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_filter('genesis_pre_get_option_site_layout', '__genesis_return_full_width_content');
 
 add_action('genesis_meta', 'home_genesis_meta');
 /**
@@ -18,6 +18,7 @@ function home_genesis_meta()
 {
     remove_action('genesis_loop', 'genesis_do_loop');
     add_action('genesis_loop', 'home_loop_helper');
+    add_action('genesis_before_footer', 'home_loop_footer');
 }
 
 /**
@@ -31,16 +32,40 @@ function home_loop_helper()
         dynamic_sidebar('service-section');
         echo '</div>';
     }
+}
 
-    if (is_active_sidebar('news-section')) {
-        echo '<div class="news-section">';
-        dynamic_sidebar('news-section');
+function home_loop_footer()
+{
+    if (is_active_sidebar('news-section') || is_active_sidebar('media-section')) {
+        echo '<div class="site-news">';
+            echo '<div class="wrap">';
+                echo '<div class="media-section">';
+                dynamic_sidebar('media-section');
+                echo '</div>';
+                echo '<div class="news-section">';
+                dynamic_sidebar('news-section');
+                echo '</div>';
+            echo '</div>';
         echo '</div>';
     }
 
-    if (is_active_sidebar('body-section')) {
-        echo '<div class="body-section">';
-        dynamic_sidebar('body-section');
+    if (is_active_sidebar('introduce-section')) {
+        echo '<div class="site-introduce">';
+            echo '<div class="wrap">';
+                echo '<div class="introduce-section">';
+                dynamic_sidebar('introduce-section');
+                echo '</div>';
+            echo '</div>';
+        echo '</div>';
+    }
+
+    if (is_active_sidebar('about-us-section')) {
+        echo '<div class="site-about-us">';
+            echo '<div class="wrap">';
+                echo '<div class="about-us-section">';
+                dynamic_sidebar('about-us-section');
+                echo '</div>';
+            echo '</div>';
         echo '</div>';
     }
 }
