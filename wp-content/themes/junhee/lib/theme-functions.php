@@ -102,8 +102,9 @@ function mb_apple_touch_icon() {
  * Footer
  */
 function mb_footer() {
-	echo '<div class="one-half first" id="footer-left">' . wpautop( genesis_get_option( 'footer-left', 'child-settings' ) ) . '</div>';
-	echo '<div class="one-half" id="footer-right">' . wpautop( genesis_get_option( 'footer-right', 'child-settings' ) ) . '</div>';
+	if (is_active_sidebar('address-section')) {
+		dynamic_sidebar('address-section');
+	}
 }
 
 /**

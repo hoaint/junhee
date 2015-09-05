@@ -18,7 +18,7 @@ function home_genesis_meta()
 {
     remove_action('genesis_loop', 'genesis_do_loop');
     add_action('genesis_loop', 'home_loop_helper');
-    add_action('genesis_before_footer', 'home_loop_footer');
+    add_action('genesis_before_footer', 'home_loop_footer', 5);
 }
 
 /**
